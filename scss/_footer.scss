@@ -1,8 +1,8 @@
 footer.footer-main {
   position: relative;
   text-align: left;
-  color: $white;
-  background-color: $black;
+  color: $color1;
+  background-color: $white;
   font-size: 0.8rem;
   h5 {
     font-size: .8rem!important;
@@ -19,22 +19,6 @@ footer.footer-main {
     padding: 0;
   }
 
-  .footer-bg {
-    >:before {
-      content: "";
-      background: url("../img/Footer/letter_D_footer_background.svg");
-      position: absolute;
-      background-repeat: no-repeat;
-      background-position: left center;
-      background-size: 50rem 50rem;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;
-      opacity: 0.05;
-      overflow:hidden;
-    }
-  }
  .back-to-top.bg-btt {
    z-index: 99;
    background: url("../img/Footer/bg_back_to_top.png") no-repeat top center;
@@ -56,27 +40,10 @@ footer.footer-main {
     padding-top: 2rem;
     padding-bottom: 1rem;
     position: relative;
-  }
 
-  .footer-logo {
-    position: relative;
-    margin-bottom: 40px;
-    .helper {
-      height: 100px;
-      display:flex;
+    p {
+      font-weight: bolder;
     }
-    img {
-      align-self: center;
-      justify-self: center;
-      max-height: 100px;
-    }
-    h6 {
-      margin-top: 20px;
-    }
-  }
-  .col-12 {
-    padding-left: 0;
-    padding-right: 30px;
   }
 
   .vertical-center {
@@ -122,14 +89,10 @@ footer.footer-main {
   }
   .footer-below {
     position: relative;
-    background: $color1;
+    background-image: $gradient1;
     color: $white;
-    font-size: 0.65rem;
     padding: 1rem;
-    background: #366b7b;
-    color: $white;
     font-size: 0.8rem;
-    padding: 1rem 1rem;
 
     a {
       text-align-all: center !important;

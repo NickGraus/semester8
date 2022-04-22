@@ -27,15 +27,15 @@
 	</head>
 	<body class="body {{body_class}}{% if is_front_page %} body-home{% else %} body-not-home{% endif %}" data-template="base.twig">
 	<a title="s0" id="s0"></a>
+	<header class="header">
+		{% block header %}
+			{% include 'header.twig' %}
+			{% include 'header-mobile.twig' %}
+		{% endblock %}
+	</header>
 		{% if is_front_page %}
 			{% include 'components/cover.twig' %}
 		{% endif %}
-		<header class="header">
-			{% block header %}
-				{% include 'header.twig' %}
-                {% include 'header-mobile.twig' %}
-			{% endblock %}
-		</header>
 		{% if is_front_page != 1 %}
 			{% include 'components/cover.twig' %}
 		{% endif %}

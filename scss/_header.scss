@@ -35,16 +35,6 @@
   img {
   }
 }
-.header-top-bar{
-  padding-top:0.75rem;
-  padding-bottom:0.25rem;
-  box-shadow: 1px 4px 6px 4px rgba(0, 0, 0, 0.1);
-  z-index: 101;
-  position: relative;
-  .afm_logo{
-    font-weight: 700!important;
-  }
-}
 
 header.header{
   z-index: 9999;
@@ -55,7 +45,7 @@ header.header{
   top:0;
   overflow: hidden;
   display: block;
-  box-shadow: -1px 1px 2px 0 rgba(0,0,0,.15);
+  //box-shadow: -1px 1px 2px 0 rgba(0,0,0,.15);
   .subnavigation{
     position: absolute;
     top:100%;
@@ -120,6 +110,13 @@ header.header{
   .main-header {
     transition:0.2s all ease-in-out;
     text-align:right;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
     .hamburger{
     transform: translateY(6px);
     }
@@ -204,10 +201,27 @@ header.header{
   }
   .main-navigation{
     //position: absolute;
-    background-color: $black;
+    background-image: $gradient1;
     top: 500px;
     transition: 0.2s ease-in-out all;
     width: 100%;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 0;
+      height:100%;
+      width:25%;
+      background-color: white;
+      border-radius: 0 20px 0 0;
+    }
+
+    img {
+      max-height: 70px;
+      width: auto;
+      padding-top: 10px;
+    }
   }
   @media only screen and (max-width: 1200px) {
   }

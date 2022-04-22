@@ -6,7 +6,7 @@
                     <div class="logo-holder">
                         <div class="logo">
                             <a href="{{site.url}}" title="{{site.name}}" rel="home">
-                                <img src="{{ site.theme.link }}/img/Footer/DPH_footer_logo.svg" class="img-fluid">
+                                <img src="{{ site.theme.link }}/img/Header/logo-nettt.png" class="img-fluid">
                             </a>
                         </div>
                     </div>
@@ -15,20 +15,15 @@
                     <div class="main-header">
                         <nav class="main">
                             {% include "components/menu.twig" with {'menu': menu_extra.get_items, 'recursive': true, 'class': 'main-list'} %}
-
-                            <a href="{{ TimberPost(254).link }}" class="btn mx-4 d-inline-block rounded">
-                                Contact/brochure
-                            </a>
-
                         </nav>
                         {% if social_media_menu is not empty %}
                         <div class="social-menu">
                             {{ social_media_menu }}
                         </div>
                         {% endif %}
-                        <a class="d-inline-block hamburger navbar-toggler c-hamburger c-hamburger--htx" href="javascript:toggleMenu();void(0);">
-                            <span></span>
-                        </a>
+{#                        <a class="d-inline-block hamburger navbar-toggler c-hamburger c-hamburger--htx" href="javascript:toggleMenu();void(0);">#}
+{#                            <span></span>#}
+{#                        </a>#}
                     </div>
                 </div>
             </div>
