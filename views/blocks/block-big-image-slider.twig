@@ -1,0 +1,31 @@
+<div class="block-holder">
+    <div class="container">
+        <div class="block-heading">
+            {% if block.heading_title %}
+                <span>{{ block.heading_title }}</span>
+            {% endif %}
+            {% if block.title %}
+                <h1>{{ block.title }}</h1>
+            {% endif %}
+        </div>
+        <div class="big-image-slider">
+            {% for item in block.image_slider %}
+            <div class="image-holder">
+                <picture>
+                    <source media="(max-width: 575px)" srcset="{{ TimberImage(item.image).src|resize(600, 400, 'center') }}">
+                    <source media="(max-width: 767px)" srcset="{{ TimberImage(item.image).src|resize(800, 500, 'center') }}">
+                    <source media="(max-width: 991px)" srcset="{{ TimberImage(item.image).src|resize(1000, 500, 'center') }}">
+                    <img src="{{ TimberImage(item.image).src|resize(1170, 550, 'center') }}" class="img-fluid"/>
+                </picture>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="block-content">
+            {% if block.text %}
+                <div class="text-holder">
+                    {{ block.text }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

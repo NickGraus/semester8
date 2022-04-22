@@ -1,0 +1,30 @@
+.block.block-image{
+  background-image: url("../img/parallax/inschrijven_parallax.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  min-height:500px;
+  width: auto;
+  .inner-block {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    background: $color1;
+    width: 100%;
+    text-align: center;
+
+    .content {
+      padding: 2rem;
+      color: $color2;
+    }
+  }
+  @media only screen and (max-width: 991px) {
+    .image-holder img{
+        min-height: 400px;
+      }
+  }
+}

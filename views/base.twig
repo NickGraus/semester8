@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html {{ function('language_attributes') }}>
+	<head>
+	{% block html_head_container %}
+
+		<meta charset="{{ site.charset }}" />
+		<title>{% if wp_title %}{{ wp_title }}{% else %}{{ site.name }}{% endif %}</title>
+		<meta name="description" content="{{ site.description }}">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, shrink-to-fit=no, user-scalable=no">
+
+		<link rel="author" href="{{ site.theme.link }}/humans.txt" />
+		<link rel="pingback" href="{{ site.pingback_url }}" />
+
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-config" content="{{ site.theme.link }}/img/favicon/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+
+		{{ function('wp_head') }}
+
+		<link rel="stylesheet" href="{{ site.theme.link }}/dist/style.css?v=1" type="text/css" media="screen" />
+
+		{% block head %}
+
+		{% endblock %}
+	{% endblock %}
+	</head>
+	<body class="body {{body_class}}{% if is_front_page %} body-home{% else %} body-not-home{% endif %}" data-template="base.twig">
+	<a title="s0" id="s0"></a>
+		{% if is_front_page %}
+			{% include 'components/cover.twig' %}
+		{% endif %}
+		<header class="header">
+			{% block header %}
+				{% include 'header.twig' %}
+                {% include 'header-mobile.twig' %}
+			{% endblock %}
+		</header>
+		{% if is_front_page != 1 %}
+			{% include 'components/cover.twig' %}
+		{% endif %}
+		<div class="header-collapse">
+			<div class="collapse navbar-collapse">
+				<div class="navbar-inner">
+					<div class="collapse-menu-heading">
+						<div class="logo">
+							<a href="{{site.url}}" title="{{site.name}}" rel="home">
+								<img src="{{ site.theme.link }}/img/Footer/DPH_footer_logo.svg" class="img-fluid">
+							</a>
+						</div>
+					</div>
+					<a class="hamburger navbar-toggler c-hamburger c-hamburger--htx" href="javascript:toggleMenu();void(0);">
+						<span></span>
+					</a>
+					<div class="navbar-content">
+						<div class="container-fluid px-0">
+							<nav class="main-list-holder mobile-menu-items">
+								{% include "components/menu-mobile.twig" with {'menu': menu.get_items, 'recursive': true, 'class': 'main-list'} %}
+							</nav>
+							<div class="contact-button">
+								<a href="{{ TimberPost(254).link }}" class="btn d-inline-block rounded">
+									Contact/brochure
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="opacity-bg"></div>
+		</div>
+
+		<div class="main">
+
+			<section id="content" role="main" class="content-wrapper">
+
+				<div class="wrapper overflow-hidden {{sidebar_class}}">
+					{% block content %}
+						Sorry, no content
+					{% endblock %}
+				</div>
+			</section>
+
+			{% block footer %}
+				<footer id="footer">
+					{% include 'footer.twig' %}
+				</footer>
+			{% endblock %}
+		</div>
+		<script src="{{ site.theme.link }}/dist/main.js"></script>
+		{{ function('wp_footer') }}
+	</body>
+</html>

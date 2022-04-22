@@ -1,0 +1,7 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="block block-page content pre-animation">
+	{% include "blocks/block-page.twig" with {"block" : post, "format": format} %}
+</div>
+{% endblock %}

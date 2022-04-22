@@ -1,0 +1,85 @@
+{% extends "base.twig" %}
+{% block content %}
+    <div class="blocks">
+        <div class="block block-1 block-text-cols text-center">
+            <div class="block-holder">
+                <div class="container">
+                    <div class="block-inner">
+                        <div class="title-holder">
+                            {% if block_1.title %}
+                                <h1 class="mb-0">{{ block_1.title }}</h1>
+                            {% endif %}
+                            {% if block_1.subtitle %}
+                                <span class="subtitle d-inline-block">{{ block_1.subtitle }}</span>
+                            {% endif %}
+                            {% if block_1.text %}
+                                <div class="text-holder">
+                                    {{ block_1.text }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="block block-2 block-villas style-light-gray">
+            <div class="block-holder">
+                <div class="container">
+                    {% if block_2.title is not empty %}
+                    <div class="title-holder">
+                        <h2>{{ block_2.title }}</h2>
+                    </div>
+                    {% endif %}
+                    {% if block_2.text is not empty %}
+                    <div class="text">
+                        {{ block_2.text }}
+                    </div>
+                    {% endif %}
+                    <div class="news-holder villas-holder">
+                        <div class="row justify-content-center">
+                        {% for item in posts %}
+                            {% include 'components/tease-villas.twig' with {"item" : item, "class" : "col-12 col-md-4", 'format': 'villas'} %}
+                        {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% if pagination is not empty %}
+                {% include ['components/pagination.twig'] %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="block block-3 block-big-image-slider">
+            <div class="block-holder">
+                <div class="container">
+                    <div class="block-heading">
+                        {% if block_3.heading_title %}
+                            <span>{{ block_3.heading_title }}</span>
+                        {% endif %}
+                        {% if block_3.title %}
+                            <h1>{{ block_3.title }}</h1>
+                        {% endif %}
+                    </div>
+                    <div class="big-image-slider">
+                        {% for item in block_3.image_slider %}
+                            <div class="image-holder">
+                                <picture>
+                                    <source media="(max-width: 575px)" srcset="{{ TimberImage(item.image).src|resize(600, 400, 'center') }}">
+                                    <source media="(max-width: 767px)" srcset="{{ TimberImage(item.image).src|resize(800, 500, 'center') }}">
+                                    <source media="(max-width: 991px)" srcset="{{ TimberImage(item.image).src|resize(1000, 500, 'center') }}">
+                                    <img src="{{ TimberImage(item.image).src|resize(1170, 550, 'center') }}" class="img-fluid"/>
+                                </picture>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="block-content">
+                        {% if block_3.text %}
+                            <div class="text-holder">
+                                {{ block_3.text }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

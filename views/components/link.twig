@@ -1,0 +1,20 @@
+{% set url_type = url.url_type %}
+{% if url_type == 'internal_url' %}
+    {% set url = url.url_internal %}
+    {% set target = "_self" %}
+{% elseif url_type == 'external_url' %}
+    {% set url = url.url_external %}
+    {% set target = "_blank" %}
+{% elseif url_type == 'mail_url' %}
+    {% set url = "mailto:" ~ url.url_mail %}
+    {% set target = "_self" %}
+{% elseif url_type == 'video' %}
+    {% set url = url.url_video %}
+    {% set target = "_self" %}
+{% endif %}
+
+{% if url_type != "no_link" %}
+<a href="{{ url }}" class="{{ class }}" target="{{ target }}"{% if url_type == "video" %} data-fancybox="video"{% endif %}>
+    {% else %}
+    <a href="#" class="{{ class }}" target="_self">
+{% endif %}

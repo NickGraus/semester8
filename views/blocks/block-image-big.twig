@@ -1,0 +1,12 @@
+<img class="image image-normal" srcset="{{ TimberImage(block.image).src|resize(1920, 600) }} 1920w, {{ TimberImage(block.image).src|resize(1024, 320) }} 1024w, {{ TimberImage(block.image).src|resize(768, 240) }} 768w, {{ TimberImage(block.image).src|resize(480, 150) }} 480w" src="{{ TimberImage(block.image).src|resize(480, 150) }}" sizes="100vw">
+<div class="overlay">
+    <div class="container position-relative">
+        {% if block.title is not empty %}
+        <div class="floating-block">
+            <div class="text">
+                {{ block.title }}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>

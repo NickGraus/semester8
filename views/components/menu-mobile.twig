@@ -1,0 +1,17 @@
+{% if menu %}
+    <ul class="{{ class }}">
+        {% for item in menu %}
+            <li class="{{ item.classes | join(' ') }} {{ item_class }} mobile-menu-item">
+                <a target="{{ item.target }}" href="{{ item.link }}" {% if 'children' in item.classes | join(' ') %}class="mobile-dropdown d-inline-block"{% endif %}>
+                    {{ item.title }}
+                </a>
+                {% if recursive == true %}
+                    {% if 'children' in item.classes | join(' ') %}
+                        <span class="mobile-dropdown-arrow"><i class="fa fa-caret-right"></i></span>
+                    {% endif %}
+                {% include "components/menu-mobile.twig" with {'menu': item.get_children, 'class': 'sub-list'} %}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

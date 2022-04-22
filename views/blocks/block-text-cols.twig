@@ -1,0 +1,62 @@
+<div class="block-holder">
+    <div class="container">
+        <div class="block-inner">
+            <div class="title-holder">
+                {% if block.heading_title %}
+                <span class="pre-title">{{ block.heading_title }}</span>
+                {% endif %}
+                {% if block.title %}
+                <h1>{{ block.title }}</h1>
+                {% endif %}
+                {% if block.subtitle %}
+                    <span class="subtitle">{{ block.subtitle }}</span>
+                {% endif %}
+                {% if block.text %}
+                <div class="text-holder">
+                    {{ block.text }}
+                </div>
+                {% endif %}
+                {% if block.button_url_type != "no_link" %}
+                    {% if block.button_url_internal is not empty or block.button_url_external is not empty or block.button_url_mail is not empty %}
+                        {% set button_color = "black" %}
+                        <div class="block-button">
+                            {% include "components/button.twig" with {"btn" : block, "style" : button_color} %}
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+            <div class="columns-holder">
+                <div class="row no-gutters row-cols">
+                    {% for col in block.columns %}
+                    <div class="col-12 {{ "col-xl-" ~ 12 / block.columns|length }} block-col">
+                        <div class="content-holder w-100 h-100 d-table">
+                            <div class=" d-table-cell align-top">
+                                {% if col.icon is not empty %}
+                                <div class="mt-lg-4 image-holder">
+                                    <img src="{{ TimberImage(col.icon)|resize(130,110, 'center') }}" class="img-fluid"/>
+                                </div>
+                                {% endif %}
+                                {% if col.title is not empty %}
+                                <div class="title-holder">
+                                    <h3 class="title h2">
+                                        {{ col.title }}
+                                    </h3>
+                                    <h4 class="pretitle h4 mb-4">
+                                        {{ col.pretitle }}
+                                    </h4>
+                                </div>
+                                {% endif %}
+                                {% if col.text != ""%}
+                                    <div class="text text">
+                                        {{col.text}}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

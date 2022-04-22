@@ -1,0 +1,208 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="blocks">
+    <div class="block block-1 block-text-image-wide position-relative">
+        <div class="container image-text-holder image-right">
+            <div class="block-holder">
+                <div class="image-section h-100">
+                    <div class="container-fluid p-0 h-100">
+                        <div class="row no-gutters h-100">
+                            <div class="col-12 col-lg-6 order-lg-1  order-2">
+                            </div>
+                            <div class="col-12 col-lg-6 order-1 order-lg-2" style="position:relative;">
+                            {% if post.get_field("block_1").image is not empty %}
+                            <div class="image-holder h-100">
+                                <div class="image-slider">
+                                    {% if post.thumbnail is not empty %}
+                                        <div class="img h-100">
+                                            <img class="fluid h-100" src="{{ TimberImage(post.thumbnail)|resize(900,450) }}"/>
+                                        </div>
+                                    {% endif %}
+                                    {% for image in post.get_field("block_1").image %}
+                                        <div class="img h-100">
+                                            <img class="fluid h-100" src="{{ TimberImage(image)|resize(900,450) }}"/>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% else %}
+                                {% if post.thumbnail is not empty %}
+                                <div class="image-holder h-100">
+                                    <div class="img h-100">
+                                        <img class="fluid h-100" src="{{ TimberImage(post.thumbnail)|resize(900,450) }}"/>
+                                    </div>
+                                </div>
+                                {% endif %}
+                            {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-section">
+                    <div class="container">
+                        <div class="row no-gutters h-100">
+                            <div class="col-12 col-lg-6 order-lg-1 order-2">
+                                <div class="content-holder h-100">
+                                    <div class="inner-content my-auto">
+                                        <div class="title-holder">
+                                            <h2 class="h2">{{ post.title }}</h2>
+                                        </div>
+                                        {% if post.get_field("block_1").subtitle is not empty %}
+                                        <div class="subtitle-holder">
+                                            <h3 class="subtitle">{{ post.get_field("block_1").subtitle  }}</h3>
+                                        </div>
+                                        {% endif %}
+                                        <div class="text">
+                                            {{ post.get_field("block_1").text }}
+                                        </div>
+                                        <div class="block-button">
+                                            <a href="#a4" class="btn btn-black">{{ __("Kenmerken") }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 order-1 order-lg-2" style="position:relative;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block block-2 block-text-image-wide style-light-gray position-relative">
+        <div class="container image-text-holder image-left">
+            <div class="block-holder">
+                <div class="image-section h-100">
+                    <div class="container-fluid p-0 h-100">
+                        <div class="row no-gutters h-100">
+                            <div class="col-12 col-lg-6 order-lg-2  order-2">
+                            </div>
+                            <div class="col-12 col-lg-6 order-1 order-lg-1" style="position:relative;">
+                                {% if post.get_field("block_2").image is not empty %}
+                                    <div class="image-holder h-100">
+                                        {% if post.get_field("block_2").image |length > 1 %}
+                                        <div class="image-slider">
+                                        {% endif %}
+                                            {% for image in post.get_field("block_2").image %}
+                                            <div class="img h-100">
+                                                <img class="fluid h-100" src="{{ TimberImage(image)|resize(900,450) }}"/>
+                                            </div>
+                                            {% endfor %}
+                                        {% if post.get_field("block_2").image |length > 1 %}
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-section">
+                    <div class="container">
+                        <div class="row no-gutters h-100">
+                            <div class="col-12 col-lg-6 order-lg-2 order-2">
+                                <div class="content-holder h-100">
+                                    <div class="inner-content my-auto">
+                                        <div class="title-holder">
+                                            <h2 class="h2">{{ post.get_field("block_2").title }}</h2>
+                                        </div>
+                                        {% if post.get_field("block_2").subtitle is not empty %}
+                                            <div class="subtitle-holder">
+                                                <h3 class="subtitle">{{ post.get_field("block_2").subtitle  }}</h3>
+                                            </div>
+                                        {% endif %}
+                                        <div class="text">
+                                            {{ post.get_field("block_2").text }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 order-1 order-lg-1" style="position:relative;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block block-3 block-big-image-slider">
+        <div class="block-holder">
+            <div class="container-fluid">
+                <div class="block-heading">
+                    {% if post.get_field("block_3").title %}
+                        <h1>{{ post.get_field("block_3").title }}</h1>
+                    {% endif %}
+                    {% if post.get_field("block_3").subtitle is not empty %}
+                        <h3 class="subtitle">{{ post.get_field("block_3").subtitle  }}</h3>
+                    {% endif %}
+                </div>
+                <div class="big-image-slider-villas">
+                    {% for item in post.get_field("block_3").image_slider %}
+                        <div class="image-holder">
+                            <a class="d-block" href="{{ TimberImage(item.image).src }}" data-fancybox="villas-galery">
+                                <picture>
+                                    <source media="(max-width: 575px)" srcset="{{ TimberImage(item.image).src|letterbox(600, 400, '#FFFFFF') }}">
+                                    <source media="(max-width: 767px)" srcset="{{ TimberImage(item.image).src|letterbox(800, 500, '#FFFFFF') }}">
+                                    <source media="(max-width: 991px)" srcset="{{ TimberImage(item.image).src|letterbox(1000, 640, '#FFFFFF') }}">
+                                    <img src="{{ TimberImage(item.image).src|letterbox(1170, 720, '#FFFFFF') }}" class="img-fluid"/>
+                                </picture>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+                {% if post.get_field("block_3").text %}
+                <div class="block-content">
+                    <div class="text-holder">
+                        {{ post.get_field("block_3").text }}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="block block-4 block-features style-light-gray position-relative">
+        <a title="a4" id="a4" style="top:-120px;position: absolute"></a>
+        <div class="block-holder">
+            <div class="container">
+                <div class="block-heading">
+                {% if post.get_field("block_4").title %}
+                    <h1>{{ post.get_field("block_4").title }}</h1>
+                {% endif %}
+                {% if post.get_field("block_4").subtitle is not empty %}
+                    <h3 class="subtitle">{{ post.get_field("block_4").subtitle  }}</h3>
+                {% endif %}
+                </div>
+                <div class="features-holder">
+                    {% if post.get_field("block_4").features|length > 1 %}
+                        {% set list_1 = post.get_field("block_4").features|slice(0, (post.get_field("block_4").features|length / 2))%}
+                        {% set list_2 = post.get_field("block_4").features|slice((post.get_field("block_4").features|length / 2), post.get_field("block_4").features|length)%}
+                    {% else %}
+                        {% set list_1 = post.get_field("block_4").features[0] %}
+                        {% set list_2 = "" %}
+                    {% endif %}
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <ul>
+                            {% for item in list_1 %}
+                                <li style="list-style: none"><i class="fa fa-check"></i><span>{{ item.feature }}</span></li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <ul>
+                                {% for item in list_2 %}
+                                    <li style="list-style: none"><i class="fa fa-check"></i><span {% if loop.index == list_2|length %}class="font-weight-bold"{% endif %}>{{ item.feature }}</span></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-holder text-sm-center block">
+                    <a href="{{ fn("get_post_type_archive_link","villas") }}" title="Nieuws" class="btn btn-black">Alle villa's</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

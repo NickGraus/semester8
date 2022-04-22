@@ -1,0 +1,70 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="block search">
+        <div class="heading">
+            <div class="container px-0">
+            {% if posts is empty %}
+                <h1 class="h2">{{ __("Geen resultaten gevonden voor:","alif") }} "{{ function('get_search_query') }}":</h1>
+            {% else %}
+                <h1 class="h2">{{ __("Zoekresultaten voor:","alif") }} "{{ function('get_search_query') }}"</h1>
+            {% endif %}
+            </div>
+        </div>
+        {% if products is not empty %}
+        <div class="search-archive search-products">
+            <div class="block block-news">
+                <div class="container px-0">
+                    <div class="title-holder">
+                        <h2>{{ __("Producten","alif") }}</h2>
+                    </div>
+                    <div class="products-holder">
+                        <div class="row">
+                            {% for item in products %}
+                                {% include "components/tease-product.twig" with {"item" : item, "class" : "col-12 col-lg-3"} %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        {% endif %}
+        {% if sitemap is not empty %}
+        <div class="search-archive search-sitemap">
+            <div class="block block-pages">
+                <div class="container px-0">
+                    <div class="title-holder">
+                        <h2>{{ __("Pagina's","alif") }}</h2>
+                    </div>
+                    <div class="pages-holder">
+                        <ul class="page-list">
+                        {% for item in sitemap %}
+                            <li><a href="{{ TimberPost(item.id).link }}">{{ item.post_title }}</a></li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% if news is not empty %}
+        <div class="search-archive search-sitemap">
+            <div class="block block-news">
+                <div class="container px-0">
+                    <div class="title-holder">
+                        <h2>{{ __("Nieuwsberichten","alif") }}</h2>
+                    </div>
+                    <div class="news-holder">
+                        <div class="row">
+                            {% for item in news %}
+                                {% include "components/tease.twig" with {"item" : item, "class" : "col-12 col-lg-4", "format":"news"} %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+{% endblock %}

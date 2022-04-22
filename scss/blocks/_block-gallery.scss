@@ -1,0 +1,54 @@
+.block.block-gallery {
+  .block-holder {
+    padding:4rem 0;
+    text-align: center;
+    overflow:hidden;
+    position: relative;
+    .title-holder{
+      margin-bottom:2rem;
+      h2{
+        margin:0;
+      }
+    }
+    .gallery{
+      .row{
+        margin: 0 -7.5px;
+        .col-6{
+          padding: 0 7.5px;
+        }
+      }
+      a{
+        display: block;
+        margin:0.5rem 0;
+        border: 4px double #dfddde;
+        border-radius: 1rem;
+        overflow:hidden;
+      }
+    }
+    .text{
+      margin-bottom:1rem;
+    }
+  }
+  @media only screen and (max-width: 1200px) {
+    .block-holder{
+      padding:4rem 1rem!important;
+    }
+  }
+  @media only screen and (max-width: 991px) {
+    .block-holder {
+      padding:4rem 2rem!important;
+    }
+  }
+  @media only screen and (max-width: 575px) {
+    padding:0 2.5px;
+    .block-holder {
+      padding:4rem 0!important;
+      .title-holder{
+        margin-bottom: 1rem;
+      }
+      .text{
+        margin-bottom:1rem;
+      }
+    }
+  }
+}

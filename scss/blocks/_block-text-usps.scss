@@ -1,0 +1,111 @@
+.block.block-text-usps{
+  padding-bottom:2rem;
+  max-width: none;
+
+  .ucp-color{
+      font-weight: 700!important;
+    font-size: 14px;
+
+  }
+
+  .fa-check{
+    &:before {
+      content: "\f00c";
+      color: #cfdcdf;
+    }
+  }
+
+  .line{
+    background-color: #b7b09d;
+    margin-top: 1rem;
+    margin-bottom: 1.6rem;
+    height: 4px;
+    width: 90px;
+
+  }
+
+  h3{
+    font-family: WindSong;
+    font-size: 60px;
+    margin-bottom: -3rem;
+  }
+
+  p{
+
+    font-size: 16px;
+    line-height: 26px;
+
+  }
+  @media only screen and (max-width: 1500px) {
+    .block-holder {
+      .hotspots-holder {
+        padding:1rem 1.5rem;
+        .col-hotspot{
+          padding-left:7.5px;
+          padding-right:7.5px;
+        }
+        .hotspot {
+          height:15vw;
+          display: block;
+          .v-table {
+            .content {
+              h2{
+                font-size:2.5vw;
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  @media only screen and (max-width: 991px) {
+    .block-holder {
+      .hotspots-holder {
+        padding: 1rem;
+        .col-hotspot{
+          padding-left:15px;
+          padding-right:15px;
+        }
+        .hotspot {
+          margin:1rem 0;
+          display: block;
+          padding:0!important;
+          height:auto;
+          .v-table {
+            padding:1rem;
+            transition: 0.5s ease-in-out all;
+            opacity: 1 !important;
+            .content {
+              h2{
+                font-size:2rem;
+              }
+              .foldout{
+                margin-top: 1rem;
+                display:block!important;
+              }
+              .text{
+                font-size: 0.875rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 575px) {
+    .block-holder {
+      .hotspots-holder {
+        padding: 0.5rem 0;
+        .hotspot{
+          margin:0.5rem 0;
+          .v-table {
+            .content {
+              padding:1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.wpcf7-form {
+  padding:2rem;
+  background-color: $color1;
+
+  font-size: 1rem;
+text-align: left!important;
+  color:$white;
+  max-width: 840px;
+  margin: 0 auto;
+  label {
+    width: 100%;
+    color: $white;
+    input {
+      padding: 0.5rem 1rem;
+      width: 100%;
+      margin-top: 0.5rem;
+
+      &[type="checkbox"] {
+        width: auto;
+        margin-left: -1rem;
+      }
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      padding: 0.5rem 1rem;
+      border: 1px solid $color1;
+    }
+  }
+
+  input {
+    &[type="submit"] {
+      transition: 0.2s all ease-in-out;
+      position: relative;
+      text-shadow: none;
+      font-size: inherit;
+      padding: 0.25rem 2rem;
+      background-color: $color2;
+      border: 2px solid $white;
+      color: $black;
+
+      &:hover {
+        background-color: transparent;
+        color: $white;
+      }
+    }
+  }
+  @media only screen and (max-width: 991px) {
+    margin-top:2rem;
+    h1, h2, h3, h4, h5, h6 {
+      margin-top:0;
+    }
+    input {
+      &[type="submit"] {
+        display: block;
+        width: 100%;
+      }
+    }
+    .ajax-loader{
+      display: none;
+    }
+  }
+  @media only screen and (max-width: 575px) {
+    padding: 1rem 1rem;
+  }
+}

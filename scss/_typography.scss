@@ -1,0 +1,194 @@
+/*
+
+  font-family: $font_regular;
+
+*/
+body{
+  color:$black;
+  font-family: $font-text;
+  font-size: 16px !important;
+  line-height: 1.5rem !important;
+  font-weight: 100 !important;
+}
+
+h1, h2,
+.h1, .h2{
+  font-family: $font-text;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+}
+
+h3, h5, h6,
+.h3, .h5, .h6 {
+  font-family: $font-title-2;
+  font-weight: 300 !important;
+
+}
+
+  h4,
+  .h4{
+    font-weight: 500;
+    text-transform: uppercase;
+
+  }
+
+.article-body{
+  h1, h2, h3, h4, h5, h6 {
+    color: $black;
+    margin-top:2rem;
+  }
+  &.contact-body{
+    h1, h2, h3, h4, h5, h6 {
+      margin-top:0;
+    }
+  }
+  ul{
+    list-style: none;
+    li{
+      &:before{
+        margin-top:-0.5rem;
+        content: "\2022";
+        font-size:1.5rem;
+        vertical-align: middle;
+        font-weight: bold; /* If you want it to be bold */
+        display: inline-block; /* Needed to add space between the bullet and the text */
+        width: 0.875em; /* Also needed for space (tweak if needed) */
+        margin-left: -0.875em; /* Also needed for space (tweak if needed) */
+        color:$color2;
+      }
+    }
+  }
+}
+p{
+
+}
+
+$text-link-color: $color2;
+
+a{
+  color: inherit;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+ul li a{
+  color: $text-link-color;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+blockquote{
+  color:$color2;
+  text-align: center;
+  margin:2rem auto;
+  max-width:990px;
+  font-size:1.5rem;
+
+  p{
+    margin-bottom:0;
+    line-height: 1.2;
+  }
+  @media only screen and (max-width: 575px) {
+    margin:1rem auto;
+  }
+}
+
+span{
+  font-weight: 300 !important;
+
+}
+
+strong{
+
+  color:$black;
+  font-weight: 800 !important;
+}
+
+.text, p {
+  font-size: 16px;
+  a {
+    color: $color1;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+body{
+  font-size:1.125rem;
+}
+
+a{
+  transition: all ease-in-out 0.3s;
+}
+
+h1, .h1 {
+  font-size: 2.5rem;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+h2, .h2 {
+  font-size: 2rem;
+}
+h3, .h3 {
+  font-size: 1.2rem;
+}
+
+h4, .h4 {
+  font-size: 1.1rem;
+}
+h5, .h5 {
+  font-size: 1.25rem;
+}
+h6, .h6 {
+  font-size: 1rem;
+}
+
+@media only screen and (max-width: 991px) {
+  h1, .h1 {
+    font-size: 36px;
+  }
+  h2, .h2 {
+    font-size: 30px;
+  }
+  h3, .h3 {
+    font-size: 24px;
+  }
+
+  h4, .h4 {
+    font-size: 20px;
+  }
+  h5, .h5 {
+    font-size: 18px;
+  }
+  h6, .h6 {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  h1, .h1 {
+    font-size: 28px;
+  }
+  h2, .h2 {
+    font-size: 24px;
+  }
+  h3, .h3 {
+    font-size: 22px;
+  }
+
+  h4, .h4 {
+    font-size: 20px;
+  }
+  h5, .h5 {
+    font-size: 18px;
+  }
+  h6, .h6 {
+    font-size: 16px;
+  }
+}

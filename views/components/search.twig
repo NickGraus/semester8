@@ -1,0 +1,6 @@
+<form method="get" class="form-search" action="{{ site.link }}">
+    <div class="form-group has-search">
+        <button type="submit" name="submit" value="submit"><div class="button-image"><img src="{{ site.theme.link }}/img/icons/search.svg" class="img-fluid"/><img src="{{ site.theme.link }}/img/icons/search-hover.svg" class="hover-button img-fluid"/></div></button>
+        <input type="text" class="form-control" placeholder="{{ __("Zoeken", "alif") }}" name="s" value="{{ function('get_search_query') }}">
+    </div>
+</form>

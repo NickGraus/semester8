@@ -1,0 +1,39 @@
+<div class="{{ class }} col-tease">
+
+	<a href="{{ TimberPost(item.ID).link }}" class="tease border">
+		<div class="image-holder">
+		{% if fn("get_the_post_thumbnail_url", item.ID) is not empty %}
+			<img src="{{ TimberImage(fn("get_the_post_thumbnail_url", item.ID)).src|resize(790, 525, 'center') }}" class="img-fluid">
+		{% else %}
+			<img src="{{ site.theme.link }}/img/no-image.jpg" class="img-fluid">
+		{% endif %}
+		</div>
+
+		<div class="content-holder">
+			<div class="text-{{ item.style }}">
+				<h3>{{ item.post_title }}</h3>
+				{% if fn("get_field", "type", item.ID) is not empty %}
+				<div class="text d-inline-block">
+					{{ fn("get_field", "type", item.ID) }}
+				</div>
+				{% endif %}
+				<br>
+				<div class="icon-holder icon-bedroom">
+					<img src="{{ site.theme.link }}/img/slaapkamer_icon.svg" class="img-fluid icon">
+					<div class="count">
+						{{ fn("get_field", "bedrooms", item.ID) }}
+					</div>
+				</div>
+				<div class="icon-holder my-3 mr-3 icon-bathroom">
+					<img src="{{ site.theme.link }}/img/badkamer_icon.svg" class="img-fluid icon">
+					<div class="count">
+						{{ fn("get_field", "bathrooms", item.ID) }}
+					</div>
+				</div>
+				<div class="btn btn-black">
+					<span href="{{ TimberPost(item.ID).link }}" class="btn-black btn-borderless">Bekijk meer</span>
+				</div>
+			</div>
+		</div>
+	</a>
+</div>

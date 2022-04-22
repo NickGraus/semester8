@@ -1,0 +1,53 @@
+{% set slider = post.get_field('slider-items') %}
+{% if slider is not empty %}
+    <div class="slider-holder position-relative">
+        <div class="slider {% if slider|length == 1 %}single-slide{% endif %}">
+            {% for item in slider %}
+                {% include "components/link.twig" with {"url" : item, "class" : "slide"} %}
+                    <div class='slider-image position-relative'>
+                        <div class="image-holder" >
+                            <picture>
+                                <source media="(max-width: 767px)" srcset="{{ TimberImage(item.image).src|resize(575, 380, 'center') }}">
+                                {% if is_front_page %}
+                                <img src="{{ TimberImage(item.image).src|resize(1920, 820, 'center')}}" class="img-fluid">
+                                {% else %}
+                                <img src="{{ TimberImage(item.image).src|resize(1920, 300, 'center')}}" class="img-fluid">
+                                {% endif %}
+                            </picture>
+                        </div>
+                        {% if is_front_page %}
+                        <img class="slogan" src="{{ site.theme.link }}/img/Header/headerslogan.svg"  alt="headerslogan" width="42"></span>
+                        {% else %}
+                            {% if item.title is not empty %}
+                             <div class="overlay overlay-park">
+                                <div class="v-table d-table h-100 w-100 rounded">
+                                    <div class="slider-content d-table-cell align-bottom w-100 rounded">
+                                        <div class="container">
+                                            <div class="content-holder">
+                                                <h2>{{ item.title }}</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        {% if is_front_page %}
+            <div class="container news-block">
+                Hier wordt kort stukje nieuws als wisseltekst geplaatst
+                <a href="#a1"></a>
+            </div>
+        {% endif %}
+        </div>
+    </div>
+{% elseif options_header is not empty %}
+    <div class="top-image">
+        <div class="slider-image">
+            <img src="{{ TimberImage(options_header[0]).src|resize(1920, 400, 'center') }}"  class="img-fluid">
+        </div>
+    </div>
+{% endif %}

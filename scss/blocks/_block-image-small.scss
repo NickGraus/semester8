@@ -1,0 +1,26 @@
+.block-image-small{
+  img{
+    height: 100px;
+    width: 100%;
+  }
+  .inner-block {
+    z-index: 100;
+    position: relative;
+    left: unset;
+    top: unset;
+    transform: unset;
+    background: $color1;
+    width: 100%;
+    text-align: center;
+
+    .content {
+      padding: 2rem;
+      color: $color2;
+    }
+  }
+  @media only screen and (max-width: 991px) {
+    .image-holder img{
+        min-height: 400px;
+      }
+  }
+}

@@ -1,0 +1,63 @@
+.block.block-contact{
+  padding:4rem 0;
+  h2{
+    margin:0;
+  }
+  h3{
+    text-transform: uppercase;
+    font-size:1.25rem;
+    margin-top:0.5rem;
+    color:#444;
+  }
+  .partners{
+    margin-top:4rem;
+    h5{
+      font-weight: 800!important;
+      text-transform: uppercase;
+      margin-bottom:2rem;
+    }
+    .contact-logo{
+      .helper {
+        min-height: 120px;
+      }
+      &.logo-1{
+
+        img{
+        max-width:320px;
+        }
+      }
+      &.logo-2{
+        img{
+          max-width:110px;
+        }
+
+      }
+      &.logo-3{
+        img{
+          max-width:250px;
+        }
+      }
+    }
+  }
+  .block-text-image-wide{
+    margin-top:4rem;
+    .image-section {
+      position: relative!important;
+    }
+    .text-section{
+      position: absolute!important;
+      bottom: 4rem;
+      left: 0;
+      width: 100%;
+      h2{
+        text-transform: none;
+        font-size:1.25rem;
+      }
+      @media only screen and (max-width: 991px) {
+        position: relative!important;
+        padding:0!important;
+        bottom:0;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+$header-height: 0px; //height + paddings
+$header-height-ipad: 66px;
+$header-height-mobile: 66px;
+
+html{
+  margin-top:0!important;
+}
+
+body{
+  @media only screen and (max-width : 1920px) {
+    margin-top:$header-height;
+  }
+  @media only screen and (max-width : 991px) {
+    margin-top: $header-height-ipad;
+  }
+  @media only screen and (max-width : 575px) {
+    margin-top: $header-height-mobile;
+  }
+  &.admin-bar{
+    margin-top:32px;
+    .duynparc-holder{
+      margin-top:32px;
+    }
+    @media only screen and (max-width : 991px) {
+      margin-top: $header-height-ipad;
+    }
+    @media only screen and (max-width : 575px) {
+      margin-top: $header-height-mobile;
+    }
+  }
+
+}
+
+@media only screen and (max-width : 991px) {
+  #wpadminbar {
+    display: none!important;
+  }
+}

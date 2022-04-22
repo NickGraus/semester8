@@ -1,0 +1,21 @@
+.block.block-archive{
+  max-width: none;
+  padding: 4rem 0;
+  .block-holder{
+    .archive-holder {
+      margin: 0 auto;
+      .title-holder {
+        text-align: center;
+        h1{
+          color:$black;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 991px) {
+    padding: 4rem 0;
+  }
+  @media only screen and (max-width: 575px) {
+    padding: 3rem 0;
+  }
+}

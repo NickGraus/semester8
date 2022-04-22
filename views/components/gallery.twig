@@ -1,0 +1,15 @@
+{% if gallery %}
+<div class="gallery">
+        <div class="row">
+            {% for image in gallery %}
+                <div class="{{ class|default("col-12") }}">
+                        <a href="{{ TimberImage(image) }}" target="_blank" data-fancybox="gallery">
+                                <div class="image img-zoom">
+                                        <img src="{{ TimberImage(image).src|resize(550,430, 'center')}}" class="img-fluid">
+                                </div>
+                        </a>
+                </div>
+            {% endfor %}
+        </div>
+</div>
+{% endif %}

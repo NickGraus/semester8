@@ -1,0 +1,18 @@
+{% extends "base.twig" %}
+{% block content %}
+    <div class="block block-archive style-paper pre-animation">
+        <div class="archive-holder">
+            <div class="news-holder">
+                {% for item in posts %}
+                    {%  if loop.index is odd %}
+                    {% set image_position = "right" %}
+                    {% else %}
+                    {% set image_position = "left" %}
+                    {% endif %}
+                    {% include 'components/tease.twig' with {"item" : item, "image_position" : image_position, 'format': 'news'} %}
+                {% endfor %}
+            </div>
+        {% include ['components/pagination.twig'] %}
+        </div>
+    </div>
+{% endblock %}

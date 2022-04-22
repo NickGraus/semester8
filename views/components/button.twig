@@ -1,0 +1,21 @@
+{% set button_title = btn.button_title %}
+{% set button_filled = btn.filled_button %}
+{% set button_type = btn.button_url_type %}
+{% if button_type == 'internal_url' %}
+    {% set button_url = btn.button_url_internal %}
+    {% set button_target = "_self" %}
+{% elseif button_type == 'external_url' %}
+    {% set button_url = btn.button_url_external %}
+    {% set button_target = "_blank" %}
+{% elseif button_type == 'mail_url' %}
+    {% set button_url = "mailto:" ~ btn.button_url_mail %}
+    {% set button_target = "_self" %}
+{% elseif button_type == 'video' %}
+    {% set button_url = btn.button_url_video %}
+    {% set button_target = "_self" %}
+{% endif %}
+
+
+{% if button_type != "no_link" %}
+    <a href="{{ button_url }}" title="{{button_title}}" class="btn btn-{{ style }} {% if button_filled == 1 %}filled{% endif%} {{ class }}" target="{{ button_target }}"{% if button_type == "video" %} data-fancybox="video"{% endif %}>{{ button_title }}</a>
+{% endif %}

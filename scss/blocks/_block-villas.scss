@@ -1,0 +1,48 @@
+.block.block-villas {
+  max-width: none;
+  padding: 4rem 0;
+  margin: 0;
+  text-align: center;
+
+  .news-bg:before {
+    content: "";
+    background: url("../img/letter_D.svg");
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 40rem 37rem;
+    top: 2rem;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.5;
+    overflow: hidden;
+  }
+
+  .title-holder {
+    display: inline-block;
+    h2 {
+      color: $black;
+    }
+  }
+
+
+  .subtitle {
+
+    h2, h3, h4 {
+
+      font-weight: 100 !important;
+      font-size: 21px;
+
+    }
+  }
+
+  .news-holder {
+    padding: 2rem 0;
+  }
+
+  @media only screen and (max-width: 575px) {
+    padding: 2rem 0;
+  }
+}

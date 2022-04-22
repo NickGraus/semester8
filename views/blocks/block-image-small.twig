@@ -1,0 +1,22 @@
+<div class="block-image-small">
+        <div class="inner-block">
+            <div class="content">
+                {% if (block.title is not empty) and (block.subtitle is empty) %}
+                    <h2 class="title">{{ block.title }}</h2>
+                {% endif %}
+                <div class="text">
+                    {{ block.text }}
+                </div>
+
+                {% if block.button_url_type != "no_link" %}
+                    {% if block.button_url_internal is not empty or block.button_url_external is not empty or block.button_url_mail is not empty %}
+                        {% set button_color = "black extra" %}
+                        <div class="block-button">
+                            {% include "components/button.twig" with {"btn" : block, "style" : button_color} %}
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+        <img src="{{ TimberImage(block.image).src|resize(1950, 511, 'center') }}" class="img-fluid"/>
+</div>

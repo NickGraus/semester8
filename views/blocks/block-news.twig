@@ -1,0 +1,23 @@
+<div class="block-holder">
+    <div class="news-bg">
+        <div class="container position-relative">
+            {% if block.title is not empty %}
+                <div class="title-holder">
+                    <h2>{{ block.title }}</h2>
+                </div>
+            {% endif %}
+            {% if block.subtitle is not empty %}
+                <div class="subtitle-holder subtitle">
+                    <h3 class="h2">{{ block.subtitle }}</h3>
+                </div>
+            {% endif %}
+            <div class="news-holder">
+                <div class="row">
+                    {% for item in news %}
+                        {% include "components/tease.twig" with {"item" : item, "class" : "col-12 col-md-4", "format":"news"} %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

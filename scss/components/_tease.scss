@@ -1,0 +1,86 @@
+.tease{
+  display: block;
+  background-color: $white;
+  color: $black;
+  .image-holder{
+    overflow: hidden;
+    img{
+      transition: 0.2s ease-in-out all;
+    }
+  }
+  .icon-holder{
+    display: inline-block;
+    position: relative;
+    padding-right: 0.75rem;
+    margin-right:1rem;
+    .count{
+      position: absolute;
+      top:-0.5rem;
+      right:0;
+      font-size: 0.875rem;
+      font-weight: 800;
+    }
+  }
+  .icon{
+
+    height: 1.75rem;
+    width: 1.75rem;
+
+  }
+
+  .content-holder {
+    padding: 1rem;
+    text-align: left;
+    h2{
+      color:$black;
+      font-weight: 700!important;
+      font-size: 22px;
+      transition: 0.2s ease-in-out all;
+      display: inline-block;
+      margin-right: 0.5rem;
+      text-transform: uppercase;
+
+    }
+
+    h3 {
+      color:$black;
+      font-weight: 700!important;
+      font-size: 22px;
+      transition: 0.2s ease-in-out all;
+      display: inline-block;
+      margin-right: 0.5rem;
+      text-transform: uppercase;
+
+    }
+
+    p{
+      display: inline-block;
+      font-size: 22px;
+    }
+
+    .block-button{
+      margin-top:0.5rem;
+    }
+  }
+  &:hover{
+    .image-holder{
+      img{
+        transform: scale(1.1);
+      }
+    }
+  }
+  @media only screen and (max-width : 991px) {
+    .content-holder {
+      h3 {
+        font-size:1.25rem;
+      }
+      .block-button{
+        margin-top:1rem;
+      }
+    }
+  }
+  @media only screen and (max-width :768px) {
+    max-width:500px;
+    margin: 1rem auto;
+  }
+}

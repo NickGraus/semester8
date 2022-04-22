@@ -1,0 +1,13 @@
+.pagination-holder{
+  padding:0 15px;
+  .pagination{
+    .page-item{
+      &.active{
+        a {
+          border-color: $color1;
+          background-color: $color1;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+<script src="https://kit.fontawesome.com/00cd8682fe.js" crossorigin="anonymous"></script>
+
+<section>
+    <div class="p-1 ucp text-center mt-3 d-none d-lg-block">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+
+                <div>
+
+                    <i class="ucp-color mr-2 fas fa-check"></i>
+                    <span class="ucp-color">Luxe recreatievilla's voor 6 en 8 personen</span>
+                </div>
+
+                <div>
+                    <i class="ucp-color mr-2 fas fa-check"></i>
+                    <span class="ucp-color">Unieke ligging aan de kust</span>
+                </div>
+
+                <div>
+                    <i class="ucp-color mr-2 fas fa-check"></i>
+                    <span class="ucp-color">Royale kavels eigen grond</span>
+                </div>
+                <div>
+                    <i class="ucp-color mr-2 fas fa-check"></i>
+                    <span class="ucp-color">Verhuur en/of eigen gebruik</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="block-holder -m-56 ">
+    <div class="text-holder">
+        <div class="container text-center mt-5">
+            {% if block.subtitle is not empty %}
+                <h3>{{ block.subtitle }}</h3>
+            {% endif %}
+            {% if block.title is not empty %}
+                <h1>{{ block.title }}</h1>
+                <div class="line"></div>
+            {% endif %}
+            {% if block.text is not empty %}
+                <div class="text">
+                    {{ block.text }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

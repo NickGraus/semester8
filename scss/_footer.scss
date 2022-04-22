@@ -1,0 +1,271 @@
+footer.footer-main {
+  position: relative;
+  text-align: left;
+  color: $white;
+  background-color: $black;
+  font-size: 0.8rem;
+  h5 {
+    font-size: .8rem!important;
+    color: #e9e3d8 !important;
+    font-weight:500!important;
+  }
+
+  h6 {
+    font-size: 0.7rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-bg {
+    >:before {
+      content: "";
+      background: url("../img/Footer/letter_D_footer_background.svg");
+      position: absolute;
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 50rem 50rem;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.05;
+      overflow:hidden;
+    }
+  }
+ .back-to-top.bg-btt {
+   z-index: 99;
+   background: url("../img/Footer/bg_back_to_top.png") no-repeat top center;
+   position: absolute;
+   margin: 0 auto;
+   left: 50%;
+   top: -24px;
+   transform: translateX(-50%);
+ }
+  .back-to-top {
+    background: transparent;
+    border: 0;
+    color: white;
+    padding: 6px 25px;
+    z-index: 2;
+  }
+
+  .footer-holder {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    position: relative;
+  }
+
+  .footer-logo {
+    position: relative;
+    margin-bottom: 40px;
+    .helper {
+      height: 100px;
+      display:flex;
+    }
+    img {
+      align-self: center;
+      justify-self: center;
+      max-height: 100px;
+    }
+    h6 {
+      margin-top: 20px;
+    }
+  }
+  .col-12 {
+    padding-left: 0;
+    padding-right: 30px;
+  }
+
+  .vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .footer-social {
+    margin-top: 2rem;
+    > a {
+      display: inline;
+      margin-left: 1rem;
+    }
+    > a:first-child {
+      margin-left: 0;
+    }
+    .social-menu {
+      span {
+        display: inline-block;
+        min-width: 150px;
+        font-size: 0.875rem;
+        font-weight: 300;
+      }
+      a {
+        display: inline-block;
+        font-size: 1.1rem;
+        text-align: center;
+        color: $white;
+        padding: 0;
+        border-radius: 50%;
+        margin: 0 0.5rem;
+        &:first-of-type {
+          margin-left: 0 !important;
+        }
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+  .footer-below {
+    position: relative;
+    background: $color1;
+    color: $white;
+    font-size: 0.65rem;
+    padding: 1rem;
+    background: #366b7b;
+    color: $white;
+    font-size: 0.8rem;
+    padding: 1rem 1rem;
+
+    a {
+      text-align-all: center !important;
+      margin-left: 1rem;
+    }
+
+    .copyright-text {
+      a {
+        color: $white;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 991px) {
+    background-size: cover;
+    background-position: right top;
+    .footer-holder {
+      padding: 2rem 2rem 1rem 2rem;
+
+      .contact-footer {
+        padding: 1rem 0 0 0;
+        margin: 0;
+
+        p {
+          margin: 0;
+        }
+      }
+
+      .col-12 {
+        padding-right: 0;
+      }
+
+      .widget-menu {
+        display: block;
+        padding: 1rem 0;
+        text-align: left;
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+    .footer-below {
+      .social-menu {
+        text-align: left;
+        padding-bottom: 1rem;
+      }
+    }
+  }
+  @media only screen and (max-width: 701px) {
+    .footer-logo {
+      .helper {
+        height: 50px;
+      }
+      img {
+        max-height: 50px;
+      }
+    }
+  }
+  @media only screen and (max-width: 575px) {
+    .col-12 {
+      display: inline;
+      margin-bottom: 20px;
+    }
+    .upper-footer {
+      text-align: right;
+      padding: 1rem;
+
+      .social-share {
+        font-size: 0.875rem;
+
+        span {
+          display: block;
+          margin-bottom: 0.5rem;
+        }
+
+        a {
+          font-size: 1.25rem;
+          width: 30px;
+          height: 30px;
+          margin: 0 0.25rem;
+        }
+      }
+    }
+    .footer-holder {
+      padding: 1rem 1rem 0.5rem 1rem;
+      .footer-logo {
+        margin-bottom: 10px;
+        .helper {
+          height: 50px;
+        }
+        h6 {
+          font-size: 0.6rem;
+        }
+      }
+
+
+      .contact-footer {
+        h3 {
+          font-size: 1rem;
+          font-weight: 600;
+
+          &.bourgie-title {
+            font-size: 0.875rem;
+          }
+        }
+
+        .footer-fields {
+          font-size: 0.875rem;
+          font-weight: 300;
+          margin-top: 1rem;
+          line-height: 1.75;
+
+          .footer-field {
+            display: block;
+
+            > div {
+              display: block;
+
+              &:first-child {
+                margin-top: 1rem;
+                font-weight: bold;
+                min-width: unset;
+              }
+            }
+          }
+        }
+      }
+    }
+    .footer-below {
+      padding: 1rem;
+
+      .social-menu {
+        text-align: left;
+        padding-bottom: 1rem;
+      }
+    }
+  }
+}

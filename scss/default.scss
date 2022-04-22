@@ -1,0 +1,80 @@
+//fonts
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;500;600;700&family=Playfair+Display:wght@200;300;400;500;600;700&family=Poppins:wght@300;400;500;600;700');
+@import 'variables';
+
+@font-face {
+  font-family: 'WindSong';
+  src: url('../fonts/Windsong/Windsong-webfont.eot') format('embedded-opentype'),
+  url('../fonts/Windsong/Windsong-webfont.woff') format('woff'),
+  url('../fonts/Windsong/Windsong-webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  /*
+  font-family: 'WindSong';
+  src: url('Windsong-webfont.eot')
+  src: url('Windsong-webfont.eot?#iefix') format('embedded-opentype'),
+  url('Windsong-webfont.woff2') format('woff2'),
+  url('Windsong-webfont.woff') format('woff'),
+  url('Windsong-webfont.ttf') format('truetype'),
+  url('Windsong-webfont.svg#windsongregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+  */
+
+}
+// Dependencies
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import '../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css';
+@import '../node_modules/slick-carousel/slick/slick.scss';
+@import '../node_modules/slick-carousel/slick/slick-theme.scss';
+@import '../node_modules/font-awesome/scss/font-awesome';
+
+// Helpers
+@import 'helpers/bjornstrap';
+@import 'helpers/content';
+@import 'helpers/search';
+@import 'helpers/hamburger';
+@import 'helpers/button';
+@import 'helpers/various';
+@import 'helpers/pagination';
+@import 'helpers/img-responsive';
+@import 'helpers/header-fixed-corrections';
+@import 'helpers/style';
+
+// Components
+@import 'components/cover';
+@import 'components/tease';
+@import 'components/form';
+@import 'components/submenu-block';
+@import 'components/top-image';
+@import 'components/search';
+
+// Project-specific
+@import 'typography';
+@import 'archive';
+@import 'header';
+@import 'header-mobile';
+@import 'footer';
+
+
+// Blocks
+@import 'blocks/block-page';
+@import 'blocks/block-image';
+@import 'blocks/block-image-small';
+@import 'blocks/block-news';
+@import 'blocks/block-villas';
+@import 'blocks/block-hotspots';
+@import 'blocks/block-text-usps';
+@import 'blocks/block-text-cols';
+@import 'blocks/block-text-image';
+@import 'blocks/block-text-image-slider';
+@import 'blocks/block-text-image-wide';
+@import 'blocks/block-gallery';
+@import 'blocks/block-faq';
+@import 'blocks/block-text-bungalow';
+@import 'blocks/block-contact';
+@import 'blocks/block-image-slider';
+@import 'blocks/block-image-big';
+@import 'blocks/block-big-image-slider';
+@import 'blocks/block-features';

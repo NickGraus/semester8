@@ -1,0 +1,96 @@
+.style-white{
+  background-color: $white;
+  color:$black;
+  h1, h2, h3{
+    color:$black;
+  }
+  .line{
+    background: $color2;
+    height: 2px;
+    width: 60px;
+    margin: 0 auto;
+  }
+  p{
+    color:$black;
+    a{
+      color: $color1;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  &.block-team{
+    background: transparent;
+    .block-holder{
+      background-color: $white;
+    }
+  }
+}
+
+.style-blue{
+  background-color: $color1;
+  color: $white;
+  h1, h2, h3{
+    color:$white;
+  }
+  .line{
+    background: $white;
+    height: 2px;
+    width: 60px;
+    margin: 0 auto;
+  }
+  p{
+    color:$white;
+    a{
+      color: $white;
+      &:hover{
+        text-decoration: underline!important;
+      }
+    }
+  }
+  &.bordered-color{
+    border-bottom:6px solid $color1;
+  }
+  &.block-team{
+    background: transparent;
+    .block-holder{
+      background-color: $color1;
+    }
+  }
+}
+
+.style-gray {
+  background-color: #faf7f2;
+  color:$black;
+  h1, h2, h3{
+    color:$black;
+  }
+  .line{
+    background: $color2;
+    height: 2px;
+    width: 60px;
+    margin: 0 auto;
+  }
+  p{
+    color:$black;
+    a{
+      color: $color1;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  &.block-team{
+    background: transparent;
+    .block-holder{
+      background-color: #faf7f2;
+    }
+  }
+}
+
+.style-light-gray{
+  background-color: #faf7f2;
+  color:$black;
+}
+
+

@@ -1,0 +1,70 @@
+<div class="container image-text-holder{% if block.image_position == "right"%} image-right{% else %} image-left{% endif %}">
+	<div class="block-holder">
+		<div class="container-fluid p-0">
+
+			<div class="block-inner">
+				{% if block.heading_title %}
+					<span>{{ block.heading_title }}</span>
+				{% endif %}
+				<div class="title-holder">
+			{% if block.title is not empty %}
+				<h1 class="h1 mb-5">{{ block.title }}</h1>
+			{% endif %}
+				</div>
+			</div>
+
+			<div class="row no-gutters h-100">
+				<div class="col-12 col-lg-6 {% if block.image_position == "right"%}order-lg-1{% else %}order-lg-2{% endif %} order-2">
+
+					<div class="content-holder h-100">
+						<div class="inner-content my-auto">
+							<div class="text">
+								{{ block.text }}
+							</div>
+							{% if block.button_url_type != "no_link" %}
+								{% if block.button_url_internal is not empty or block.button_url_external is not empty or block.button_url_mail is not empty %}
+									{% set button_color = "" %}
+									{% if block.style == "gray" %}
+										{% set button_color = "black" %}
+									{% elseif block.style == "gold" %}
+										{% set button_color = "black" %}
+									{% elseif block.bordered_color == 1 %}
+										{% set button_color = block.style %}
+									{% else %}
+										{% set button_color = "white" %}
+									{% endif %}
+									<div class="block-button ">
+										{% include "components/button.twig" with {"btn" : block, "style" : button_color} %}
+										<a href="{{site.url}}" title="{{site.name}}" class="resort-logo" rel="home">
+											<img src="{{ site.theme.link }}/img/ResortNet_logo.svg" class="">
+										</a>
+									</div>
+								{% endif %}
+							{% endif %}
+						</div>
+
+					</div>
+				</div>
+				<div class="col-12 col-lg-6 order-1 {% if block.image_position == "right"%}order-lg-2{% else %}order-lg-1{% endif %}" style="position:relative;">
+					{% if block.image is not empty %}
+					<div class="image-holder h-100">
+						<div class="img h-100">
+							<img class="fluid h-100" src="{{ TimberImage(block.image) }}"/>
+						</div>
+					</div>
+					{% endif %}
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="mt-lg-5 text-below h-100">
+		<div class="block-center my-auto">
+			<div class="text">
+				<h1>{{ block.below_title }}</h1> <br>
+				{{ block.below_tekst }}
+			</div>
+		</div>
+	</div>
+</div>

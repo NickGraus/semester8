@@ -1,0 +1,13 @@
+{% extends "base.twig" %}
+{% block content %}
+	<h1 class="mt-5 d-none">{{ post.title }}</h1>
+	<div class="blocks">
+		{% for block in blocks %}
+			<div class="block-{{ loop.index }} position-relative block {{ block.acf_fc_layout }} style-{{ block.style }} {% if block.style_choice == "image"%} style-image{% endif %} pre-animation" {% if block.style_choice == "image" and block.bg_image is not empty %} style="background-image:url('{{ TimberImage(block.bg_image).src }}');"{% endif %}>
+				<a class="block-anchor" name="a{{ loop.index }}" id="a{{ loop.index }}"></a>
+
+				{% include 'blocks/'~ block.acf_fc_layout ~'.twig' ignore missing with {'index': loop.index } %}
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

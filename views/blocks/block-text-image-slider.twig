@@ -1,0 +1,73 @@
+<div class="container image-text-holder{% if block.image_position == "right"%} image-right{% else %} image-left{% endif %}">
+    <div class="block-holder">
+        <div class="container-fluid">
+            <div class="row no-gutters h-100">
+                <div class="col-12 col-lg-6 {% if block.image_position == "right"%}order-lg-1{% else %}order-lg-2{% endif %} order-2">
+                    <div class="content-holder h-100">
+                        <div class="inner-content my-auto">
+
+                            {% if (block.title is not empty) and (block.subtitle is empty) %}
+                                <h2 class="h2">{{ block.title }}</h2>
+                            {% endif %}
+                            {% if block.subtitle is not empty %}
+                                <div class="title-holder">
+                                    <h2 class="h2">{{ block.title }}</h2>
+                                </div>
+                                <div class="subtitle-holder">
+                                    <h3 class="subtitle">{{ block.subtitle }}</h3>
+                                </div>
+                            {% endif %}
+                            <div class="text">
+                                {{ block.text }}
+                            </div>
+                            {% if block.button_1.button_url_type != "no_link" %}
+                                {% if block.button_1.button_url_internal is not empty or block.button_1.button_url_external is not empty or block.button_1.button_url_mail is not empty %}
+                                    {% set button_color = "black" %}
+                                    <div class="block-button">
+                                        {% include "components/button.twig" with {"btn" : block.button_1, "style" : button_color} %}
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                            {% if block.button_2.button_url_type != "no_link" %}
+                                {% if block.button_2.button_url_internal is not empty or block.button_2.button_url_external is not empty or block.button_2.button_url_mail is not empty %}
+                                    {% set button_color = "black" %}
+                                    <div class="block-button">
+                                        {% include "components/button.twig" with {"btn" : block.button_2, "style" : button_color} %}
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+
+                        {% if(block.watermark) %}
+                            <div class="watermark"></div>
+                        {%  endif %}
+
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 order-1 {% if block.image_position == "right"%}order-lg-2{% else %}order-lg-1{% endif %}" style="position:relative;">
+                    <div class="image-slider">
+                        {% for item in block.image_slider %}
+                            <div class="image-holder">
+                                {% if item.sizable == 1 %}
+                                <a href="{{ TimberImage(item.image).src }}" data-fancybox="slider-gallery">
+                                    <div class="zoom-image">
+                                        <img src="{{ site.theme.link }}/img/zoom.svg"/>
+                                    </div>
+                                {% endif %}
+                                <picture>
+                                    <source media="(max-width: 575px)" srcset="{{ TimberImage(item.image).src|resize(600, 600, 'center') }}">
+                                    <source media="(max-width: 767px)" srcset="{{ TimberImage(item.image).src|resize(800, 600, 'center') }}">
+                                    <source media="(max-width: 991px)" srcset="{{ TimberImage(item.image).src|resize(1000, 600, 'center') }}">
+                                    <img src="{{ TimberImage(item.image).src|resize(1950, 1000, 'center') }}" class="img-fluid"/>
+                                </picture>
+                                {% if item.sizable == 1 %}
+                                </a>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

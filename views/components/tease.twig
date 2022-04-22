@@ -1,0 +1,37 @@
+<div class="block block-news-single {% if image_position == "left"%}style-light-gray{% endif %}">
+	<div class="container image-text-holder {% if image_position == "right"%} image-right{% else %} image-left{% endif %}">
+		<div class="block-holder">
+			<div class="container-fluid">
+				<div class="row no-gutters h-100">
+					<div class="col-12 col-lg-6 {% if image_position == "right"%}order-lg-1{% else %}order-lg-2{% endif %} order-2">
+						<div class="content-holder h-100">
+							<div class="inner-content my-auto">
+								<div class="date">
+									{{ item.post_date|date("m.d.y") }}
+								</div>
+								<div class="title-holder title-holder-news-single">
+									<h2 class="h2">{{ item.post_title }}</h2>
+								</div>
+								<div class="text">
+									{{ item.post_content|truncate(60) }}
+								</div>
+								<div class="block-button">
+									<a href="{{ TimberPost(item.ID).link }}" class="btn btn-black">Lees verder</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-lg-6 order-1 {% if image_position == "right"%}order-lg-2{% else %}order-lg-1{% endif %}" style="position:relative;">
+						{% if item.thumbnail is not empty %}
+							<div class="image-holder h-100">
+								<div class="img h-100">
+									<img class="fluid h-100" src="{{ TimberImage(item.thumbnail)|resize(600,400)  }}"/>
+								</div>
+							</div>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

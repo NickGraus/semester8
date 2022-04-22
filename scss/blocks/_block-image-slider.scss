@@ -1,0 +1,103 @@
+.block-image-slider{
+  background-image: url("../img/leaf-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-color: #366b7b;
+  .image-slider{
+    margin-right: calc((100vw - 1140px + 15px)/2);
+    .image-holder{
+      position: relative;
+      .content-overlay{
+        position:absolute;
+        right:5rem;
+        top:0;
+        display: table;
+        height:100%;
+        .overlay-inner{
+          max-width:320px;
+          display: table-cell;
+          vertical-align: middle;
+          .content{
+            text-align: center;
+            padding:2.5rem;
+            background-color: $white;
+            h2{
+              font-family: $font-text;
+              font-weight: 800;
+            }
+          }
+        }
+      }
+    }
+    .slick-dots{
+      bottom:-40px;
+      width:100vw;
+      li{
+        width:54px;
+        height:3px;
+        margin:0 1.5rem;
+        button{
+
+          &:before{
+            content:"";
+            background-color:$black;
+            width:54px;
+            height:3px;
+            border-radius: 0;
+          }
+        }
+      }
+    }
+    .no-dots{
+      .slick-dots{
+        display: none!important;
+      }
+    }
+  }
+  @media only screen and (max-width: 1200px) {
+    .image-slider{
+      .image-holder{
+        .content-overlay{
+          .overlay-inner{
+            max-width:420px;
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 991px) {
+    .image-slider{
+      margin-right: 0;
+      .image-holder{
+        .content-overlay{
+          margin: 0 auto;
+          left: 0;
+          right: 0;
+
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 575px) {
+    .image-slider{
+      .image-holder{
+        .content-overlay{
+          .overlay-inner{
+            padding:1rem;
+            .content{
+              padding:1.5rem;
+              h2{
+                font-size:1.375rem;
+              }
+            }
+          }
+        }
+      }
+      .slick-dots{
+        li{
+          margin:0 .75rem;
+        }
+      }
+    }
+  }
+}

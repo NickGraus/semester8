@@ -1,0 +1,29 @@
+.block.search{
+  padding: 2rem 0;
+  background-color: #f7f7f7;
+  .heading{
+    padding: 2rem;
+    text-align: left;
+    h1 {
+      color: $gray;
+    }
+  }
+  .block-pages{
+    padding:0 2rem;
+    text-align: left;
+    h2{
+      color:$gray;
+    }
+    .pages-holder{
+      display: inline-block;
+      text-align: left;
+      margin-top:1rem;
+      ul,li{
+
+      }
+    }
+  }
+  .search-archive{
+    padding: 1rem 0;
+  }
+}

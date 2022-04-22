@@ -1,0 +1,30 @@
+<div class="block-holder">
+    <div class="image-slider">
+        {% for item in block.image_slider %}
+        <div class="image-holder">
+            <picture>
+                <source media="(max-width: 575px)" srcset="{{ TimberImage(item.image).src|resize(600, 600, 'center') }}">
+                <source media="(max-width: 767px)" srcset="{{ TimberImage(item.image).src|resize(800, 600, 'center') }}">
+                <source media="(max-width: 991px)" srcset="{{ TimberImage(item.image).src|resize(1000, 500, 'center') }}">
+                <img src="{{ TimberImage(item.image).src|resize(1950, 511, 'center') }}" class="img-fluid"/>
+            </picture>
+            {% if item.title is not empty or item.text is not empty %}
+            <div class="content-overlay">
+                <div class="overlay-inner">
+                    <div class="content">
+                        {% if item.title is not empty %}
+                        <h2>{{ item.title }}</h2>
+                        {% endif %}
+                        {% if item.text is not empty %}
+                        <div class="text">
+                            {{ item.text }}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
