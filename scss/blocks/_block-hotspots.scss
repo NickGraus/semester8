@@ -1,43 +1,88 @@
 .block.block-hotspots {
   padding: 4rem 0;
-  background: $color3;
-  max-width: none;
+  background: $gradient1;
 
   .block-holder {
     .hotspots-holder {
       .hotspot {
+        .image-holder {
+          .img-fluid {
+            height:300px;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        .content {
+          border: 2px solid $white;
+          border-top: none;
+          padding: 2rem;
+          h2 {
+            color: $white;
+            font-size: 1.25rem;
+          }
+          .description {
+            color: $white;
+            font-weight: bolder;
+          }
+        }
+      }
+      .hotspot.front-page {
         margin: 1rem 0;
         display: block;
         position: relative;
-
-        .image-holder {
-          overflow: hidden;
-
-          img {
-
-            transition: .2s ease-in-out all
-
+        background-color: $white;
+        border: 2px solid transparent;
+        .content {
+          border: none;
+          height: 100%;
+          .extra {
+            color: $color1;
+            font-weight: bolder;
+            position: absolute;
+            bottom: 1rem;
+            right: 2rem;
           }
         }
+        &:hover {
+          background-color: transparent;
+          border: 2px solid $white;
+          .content {
+            .title {
+              h2 {
+                color: $white;
+              }
+            }
+            .description {
+              color: $white;
+            }
+            .extra {
+              color: $white;
+            }
+          }
 
+        }
+        .image-holder {
+          overflow: hidden;
+          img {
+            //transition: .2s ease-in-out all
+          }
+        }
         .content {
           text-align: left;
           position: relative;
-
+          padding: 2rem;
           .title {
-            position: absolute;
-            bottom: 0;
-            padding: 1rem;
-            background-color: rgba(0, 0, 0, 0.4);
-            transition: .2s ease-in-out all;
+            //transition: .2s ease-in-out all;
             width: 100%;
-
             h2 {
-              font-size: 1.25rem;
-              color: $white;
+              font-size: 1.5rem;
+              color: $color1;
               margin: 0;
               text-transform: uppercase;
             }
+          }
+          .description {
+            color: $color1;
           }
         }
 
@@ -50,7 +95,7 @@
 
           .content {
             .title {
-              background-color: rgba(0, 0, 0, 0.7);
+              //background-color: rgba(0, 0, 0, 0.7);
             }
           }
         }
@@ -59,84 +104,10 @@
   }
 
   @media only screen and (max-width: 1500px) {
-    .block-holder {
-      .hotspots-holder {
-        padding: 1rem 1.5rem;
-
-        .col-hotspot {
-          padding-left: 7.5px;
-          padding-right: 7.5px;
-        }
-
-        .hotspot {
-          display: block;
-
-          .v-table {
-            .content {
-              h2 {
-                font-size: 2.5vw;
-              }
-            }
-          }
-        }
-      }
-    }
   }
   @media only screen and (max-width: 991px) {
-    .block-holder {
-      .hotspots-holder {
-        padding: 1rem;
 
-        .col-hotspot {
-          padding-left: 15px;
-          padding-right: 15px;
-        }
-
-        .hotspot {
-          margin: 1rem 0;
-          display: block;
-          padding: 0 !important;
-          height: auto;
-
-          .v-table {
-            padding: 1rem;
-            transition: 0.5s ease-in-out all;
-            opacity: 1 !important;
-
-            .content {
-              h2 {
-                font-size: 2rem;
-              }
-
-              .foldout {
-                margin-top: 1rem;
-                display: block !important;
-              }
-
-              .text {
-                font-size: 0.875rem;
-              }
-            }
-          }
-        }
-      }
-    }
   }
   @media only screen and (max-width: 575px) {
-    .block-holder {
-      .hotspots-holder {
-        padding: 0.5rem 0;
-
-        .hotspot {
-          margin: 0.5rem 0;
-
-          .v-table {
-            .content {
-              padding: 1rem;
-            }
-          }
-        }
-      }
-    }
   }
 }

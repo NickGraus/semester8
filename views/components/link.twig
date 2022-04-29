@@ -14,7 +14,7 @@
 {% endif %}
 
 {% if url_type != "no_link" %}
-<a href="{{ url }}" class="{{ class }}" target="{{ target }}"{% if url_type == "video" %} data-fancybox="video"{% endif %}>
+<a href="{{ url }}" class="{{ class }} {% if is_front_page %} front-page {% endif %}" target="{{ target }}"{% if url_type == "video" %} data-fancybox="video"{% endif %}>
     {% else %}
     <a href="#" class="{{ class }}" target="_self">
 {% endif %}
