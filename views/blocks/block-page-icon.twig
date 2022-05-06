@@ -1,0 +1,60 @@
+<div class="block-holder">
+    <div class="container">
+        <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}-{{ index }}">
+            <section class="article-content">
+                {% if block.icon is not empty %}
+                    <div class="mt-lg-4 icon-holder">
+                        <img src="{{ TimberImage(block.icon) }}" />
+                    </div>
+                {% endif %}
+                {% if block.subtitle %}
+                    <h4 class="article-h4">{{ block.subtitle }}</h4>
+                {% endif %}
+                {% if format == "news" %}
+                    <div class="date">
+                        {{ block.post_date|date("m.d.y") }}
+                    </div>
+                {% endif %}
+                <div class="article-body">
+                    {{ block.content }}
+                    {% if format != "news" %}
+                    {% include 'components/gallery.twig' with { class: 'col-6 col-md-4 col-lg-3', "gallery" : block.gallery } %}
+                    {% endif %}
+                </div>
+                {% if format == "news" %}
+                <div class="blocks">
+                    <div class="block-text-image">
+                        <div class="block-holder">
+                            <div class="row">
+                                <div class="col-12 col-lg-6 order-lg-2" style="position:relative;">
+                                {% if block.thumbnail is not empty %}
+                                    <div class="image-holder h-100">
+                                        <div class="img h-100">
+                                            <img class="fluid h-100" src="{{ TimberImage(block.thumbnail)|resize(600,400) }}"/>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                </div>
+                                <div class="col-12 order-lg-1 {% if block.thumbnail is not empty %}col-lg-6{% endif %}">
+                                    <div class="content-holder h-100">
+                                        <div class="inner-content my-auto">
+                                            {% if block.text_below is not empty %}
+                                            <div class="text">
+                                                {{ block.text_below }}
+                                            </div>
+                                            {% endif %}
+                                            <div class="button-holder mt-4">
+                                                <a href="{{ fn("get_post_type_archive_link","post") }}" title="Nieuws" class="btn btn-black">Terug naar pagina</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </section>
+        </article>
+    </div>
+</div>
