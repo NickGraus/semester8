@@ -2,55 +2,25 @@
     <div class="hotspots-holder">
         <div class="container">
             <div class="row justify-content-center">
-                {% if block.hotspots|length == 3 %}
-                    {% for item in block.hotspots %}
-                        <div class="{% if loop.index == 1 %}col-12 col-lg-6 {% else %}col-12 col-lg-6{% endif %}">
-                            {% include "components/link.twig" with {"url" : item, "class": "hotspot"} %}
-{#                            <div class="image-holder">#}
-{#                                {% if item.image is not empty %}#}
-{#                                    {% if loop.index == 1 %}#}
-{#                                        <img class="img-fluid" src="{{ TimberImage(item.image).src|resize(730,350, 'center') }}"/>#}
-{#                                    {% elseif loop.index == 3 %}#}
-{#                                        <img class="img-fluid" src="{{ TimberImage(item.image).src|resize(1150,420, 'center') }}"/>#}
-{#                                    {% else %}#}
-{#                                        <img class="img-fluid" src="{{ TimberImage(item.image).src|resize(350,350, 'center') }}"/>#}
-{#                                    {% endif %}#}
-{#                                {% else %}#}
-{#                                    <img class="img-fluid" src="{{ site.theme.link }}/img/no-image.jpg"/>#}
-{#                                {% endif %}#}
-{#                            </div>#}
-                            <div class="content">
-                                {%  if(item.title != "") %}
-                                    <div class="title">
-                                        <h2 class="h2">{{ item.title }}</h2>
-                                    </div>
-                                    <div class="description">
-                                        <p>{{item.text}}</p>
-                                    </div>
-                                    <div class="extra">
-                                        Bekijk fase >
-                                    </div>
-                                {% endif %}
-                            </div>
-                            </a>
-                        </div>
-                    {% endfor %}
-                {% else %}
-                    {% for item in block.hotspots %}
-                    <div class="{% if loop.index == 4 %}col-12 col-lg-6 order-5 order-lg-{{ loop.index }}{% else %}col-12 col-lg-6 order-lg-{{ loop.index }}{% endif %}">
+                {% for item in block.hotspots %}
+                    <div class="col-12 col-lg-6 col-12 col-lg-6">
                         {% include "components/link.twig" with {"url" : item, "class": "hotspot"} %}
-                            <div class="image-holder">
-                                {% if item.image is not empty %}
-                                {% if loop.index == 4 %}
-                                <img class="img-fluid" src="{{ TimberImage(item.image).src|resize(730,350, 'center') }}"/>
+                        {% if is_front_page != 1 %}
+                        <div class="image-holder">
+                            {% if item.image is not empty %}
+                                {% if loop.index == 1 %}
+                                    <img class="img-fluid" src="{{ TimberImage(item.image).src|resize(730,350, 'center') }}"/>
+                                {% elseif loop.index == 3 %}
+                                    <img class="img-fluid" src="{{ TimberImage(item.image).src|resize(1150,420, 'center') }}"/>
                                 {% else %}
-                                <img class="img-fluid" src="{{ TimberImage(item.image).src|resize(350,350, 'center') }}"/>
+                                    <img class="img-fluid" src="{{ TimberImage(item.image).src|resize(350,350, 'center') }}"/>
                                 {% endif %}
-                                {% else %}
+                            {% else %}
                                 <img class="img-fluid" src="{{ site.theme.link }}/img/no-image.jpg"/>
-                                {% endif %}
-                            </div>
-                            <div class="content">
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                        <div class="content">
                             {%  if(item.title != "") %}
                                 <div class="title">
                                     <h2 class="h2">{{ item.title }}</h2>
@@ -58,12 +28,16 @@
                                 <div class="description">
                                     <p>{{item.text}}</p>
                                 </div>
+                                {% if is_front_page %}
+                                <div class="extra">
+                                    Bekijk fase >
+                                </div>
+                                    {% endif %}
                             {% endif %}
-                            </div>
+                        </div>
                         </a>
                     </div>
-                    {% endfor %}
-                {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>

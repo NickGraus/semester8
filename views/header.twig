@@ -2,7 +2,7 @@
     <div class="container position-relative">
         <div class="header-top">
             <div class="row no-gutters">
-                <div class="col-2">
+                <div class="col-2 col-logo">
                     <div class="logo-holder">
                         <div class="logo">
                             <a href="{{site.url}}" title="{{site.name}}" rel="home">
@@ -13,7 +13,7 @@
                 </div>
                 <div class="col">
                     <div class="main-header">
-                        <nav class="main">
+                        <nav class="main-navbar">
                             {% include "components/menu.twig" with {'menu': menu_extra.get_items, 'recursive': true, 'class': 'main-list'} %}
                         </nav>
                         {% if social_media_menu is not empty %}
